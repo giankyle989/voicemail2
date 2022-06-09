@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "666332754191",
+    "firebase_url": "https://voicemail-350107-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "voicemail-350107",
+    "storage_bucket": "voicemail-350107.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666332754191:android:28fa104c3aad8a84038e7a",
+        "android_client_info": {
+          "package_name": "com.example.voicemail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666332754191-d5licjp1gvdvq3jefqh0ac2pvlhnqasj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.voicemail",
+            "certificate_hash": "336e0fee05b95023ed62e383b78b32ba93b7f035"
+          }
+        },
+        {
+          "client_id": "666332754191-cdfnkhu895te8755dqlf51ljne7u44rs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvJZKa_Z-Mb0q1fzBXM5rbRCc2WdbuAPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666332754191-cdfnkhu895te8755dqlf51ljne7u44rs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
