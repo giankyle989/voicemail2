@@ -21,8 +21,13 @@
         <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/content_read.xml" value="0.14736842105263157" />
         <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/custom_dialog.xml" value="0.23421052631578948" />
         <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/db_test.xml" value="0.16140350877192983" />
+        <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/dialog.xml" value="0.22830269345874304" />
+        <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/layout_dialog.xml" value="0.22830269345874304" />
         <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/message_list.xml" value="0.25" />
+        <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/practice.xml" value="0.21" />
         <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/spinner_loading.xml" value="0.23421052631578948" />
+        <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/layout/submit_pass.xml" value="0.2274476271911073" />
+        <entry key="..\:/Dev/Android Projects/voicemail/app/src/main/res/menu/menu_main.xml" value="0.22830269345874304" />
       </map>
     </option>
   </component>

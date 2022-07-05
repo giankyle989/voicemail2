@@ -1,10 +1,9 @@
 package com.example.voicemail;
 
-import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,40 +12,37 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.os.Vibrator;
 import android.os.VibrationEffect;
-import android.view.View;
-import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
 
 
-public class Dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity{
     private boolean IsInitialVoiceFinished;
     private TextToSpeech tts;
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+    public TextView userName;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
-//        BlurLayout blurLayout;
-//        blurLayout = findViewById(R.id.blurLayout);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-//        }
-//        else{
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//        }
 
 
 
@@ -72,7 +68,22 @@ public class Dashboard extends AppCompatActivity {
                 }
             }
         });
-}
+
+        userName = findViewById(R.id.userName);
+
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        gsc = GoogleSignIn.getClient(this, gso);
+
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+        if(acct!=null){
+            String personName = acct.getDisplayName();
+            userName.setText(personName);
+        }
+
+
+
+
+    }
 
     private void speak(String text){
 
@@ -127,9 +138,18 @@ public class Dashboard extends AppCompatActivity {
 
 
     protected void logout(){
+//        gsc.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                 Intent intent = new Intent(getApplicationContext(),Login.class);
+//                 startActivity(intent);
+//            }
+//        });
+
+
+
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(getApplicationContext(),Login.class);
-        startActivity(intent);
+        startActivity(new Intent(Dashboard.this,Login.class));
     }
 
 
@@ -150,11 +170,9 @@ public class Dashboard extends AppCompatActivity {
                 }
                 else if(result.get(0).equals("read")){
                     goToRead();
-                }
-                else if(result.get(0).equals("logout")){
+                } else if (result.get(0).equals("logout")) {
                     logout();
-                }
-                else if(result.get(0).equals("close")){
+                } else if (result.get(0).equals("close")) {
                     close();
                 }
 
@@ -162,5 +180,8 @@ public class Dashboard extends AppCompatActivity {
 
             }
         }
-    }
+
+
+
+}
 

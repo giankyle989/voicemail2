@@ -7,9 +7,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.speech.tts.TextToSpeech;
 import android.widget.Toast;
-
-import com.google.firebase.auth.OAuthCredential;
-
 import java.util.Locale;
 
 import java.util.Properties;

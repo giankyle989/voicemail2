@@ -23,8 +23,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="93dp"
-                android:background="@drawable/vmlogo">
-            </ImageView>
+                android:background="@drawable/vmlogo"></ImageView>
         </FrameLayout>
 
         <RelativeLayout
@@ -36,15 +35,24 @@
 
 
 </LinearLayout>
+
+
     <com.google.android.gms.common.SignInButton
         android:id="@+id/google_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        />
+        android:adjustViewBounds="true" />
+
+    <Button
+        android:id="@+id/btn_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="App Password"/>
 
 
 </RelativeLayout>
